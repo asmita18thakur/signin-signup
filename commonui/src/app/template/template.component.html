@@ -1,0 +1,47 @@
+
+<section class="loginBg">
+    <div class="sub-bg">
+  
+      <div class="container">
+        <div class="row">
+          <div class="loginContainer">
+            <div class="col-sm-12">
+              <!-- login panel Start -->
+  
+              <div class="loginPanel">
+                <div class="logo-section">
+                  <!-- logo -->
+                  <div class="loginLogo p-t-3 mb-3">
+                    <img class="Mobius-logo" src="assets/images/Mobius 09-02-2023 v-01 3.png" />
+                  </div>
+                  
+                  <!-- login form-->
+                  
+                </div>
+                <!-- login -->
+                <div *ngIf="!IsLogin">
+                    <app-login/>
+                </div>
+                <div *ngIf="IsLogin!=null">
+
+                </div>
+                
+                <!-- Footer Text -->
+                <footer class="footerText">
+                  <p>@2010 - 2023 Gaian Technologies</p>
+                </footer>
+              </div>
+              <!-- Login Panel Stop -->
+              <!-- Login Video Start -->
+              <div class="loginVideo">
+                <!-- Image/Video Start -->
+                <!-- <img src="/assets/images/loginVideo.png" /> -->
+                <!--  Image/Video Stop-->
+              </div>
+              <!--  Login Video End -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,52 @@
+<div >
+  <div class="loginForm">
+    <h2 class="welcome-txt">Welcome back</h2>
+  </div>
+  <div class="mid-section">
+    <div class="mb-2">
+
+      <label for="email" class="form-label  ms-0"
+        style="font-family: roboto; font-style: normal; font-size: 14px; font-weight: 400;">Email address</label>
+  
+      <div class="right-border form-control">
+        <input placeholder="Enter username" type="text" class="" [(ngModel)]="email" (change)="isValidEmail(email)" name="eamil">
+        <img *ngIf="isValid=='right'" src="assets/images/Check_Circle_right.svg" class="input-icon"/>
+        <img *ngIf="isValid=='wrong' && email!=''" src="assets/images/Check_Circle_wrong.svg" class="input-icon"/>
+        <img *ngIf="email==null || email==undefined || email==''" src="assets/images/Check_Circle_1.svg" class="input-icon"/>
+      </div>
+        <!-- [(ngModel)]=""> -->
+  
+    </div>
+  
+    <div class="mb-2">
+      <label for="exampleFormControlInput1" class="form-label ms-0"
+        style="font-family: roboto; font-style: normal; font-size: 14px; font-weight: 400;">Password</label>
+      <div class="right-border form-control">
+        <input   [type]="show?'text':'password'" class=""
+        name="password" id="exampleFormControlInput1" placeholder="Enter password" autocomplete="off" [(ngModel)]="password">
+        <img *ngIf="show==true" src="assets/images/eye.svg" class="input-icon" (click)="showPass(!show)">
+        <img *ngIf="show!=true" src="assets/images/eye-off.svg" class="input-icon" (click)="showPass(!show)">
+      </div>
+  
+        <!-- [(ngModel)]="loginObj.password"  -->
+  
+    </div>
+    <div class="forgotPassword">
+      <input type="radio" [(ngModel)]="rememberMe"  name="" id="">
+      
+      <span> Remember me </span>
+      <a routerLink="/forgotpassword" class="router_link_a">Forgot password</a>
+  
+    </div>
+    <div class="mb-3">
+      <!-- [ngClass]="{'disableClass': isSubmit}" type="button" (click)="setTenantId()" -->
+      <input  data-dismiss="modal" class="btn btn-primary"
+        id="exampleFormControlInput1" value="Login" (click)="login()">
+    </div>
+    <!-- forgot Password -->
+    <div class="register">
+      <span>Don't have an account? </span><a routerLink="/forgotpassword" class="router_link_a">Sign Up</a>
+    </div>
+  </div>
+  
+</div>

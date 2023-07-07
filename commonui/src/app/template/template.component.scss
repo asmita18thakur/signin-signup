@@ -1,0 +1,170 @@
+.loginPanel {
+    height: 100%;
+  }
+  
+  input {
+    border: none;
+    outline: none;
+    background: #F9F9F9
+  }
+  .input-icon{
+    align-self: flex-end;
+    width: 30px;
+  }
+  .right-border input{
+    width: 100%;
+  }
+  .loginBg {
+    background-image: url("../../assets/images/Frame\ 6\ \(1\).png");
+    background-size: contain;
+    width: 100%;
+  }
+  
+  .router_link_a{
+    text-decoration: none;
+    color: #000;
+  }
+  .sub-bg {
+    background-image: url("../../assets/images/Mobius\ 09-02-2023\ v-01\ 1.png");
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: calc(45%);
+    background-position-x: right;
+    background-position-y: 23%;
+    width: 100%;
+  }
+  
+  .loginContainer,
+  .roe {
+    width: auto;
+    height: auto;
+  }
+  
+  .loginLogo {
+    margin-top: 50px;
+    margin-left: 50px;
+    // width: 257px;
+  }
+  
+  .btn-primary {
+    margin-top: 20px;
+    width: 360px;
+    height: 45px;
+    background: #9747FF;
+    border-radius: 8px;
+  
+  }
+  
+  .right-border {
+    border: none;
+    border-right: 3px solid #979797;
+    display: flex;
+  }
+  
+  .form-control {
+    width: 100%;
+    box-sizing: border-box;
+    width: 360px;
+    height: 45px;
+    background: #F9F9F9;
+    border-radius: 8px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+  
+  .welcome-txt {
+    width: 357px;
+    height: 49px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 49px;
+    text-align: center;
+    color: #4A4543;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+  
+  .forgotPassword {
+    margin-top: 20px;
+    display: flex;
+    // margin: 1% 0% 1% 0%;
+  }
+  
+  .forgotPassword span {
+    margin-left: 5px;
+    color: black !important;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #808080;
+  }
+  
+  .forgotPassword input {
+    width: 18px;
+  }
+  
+  .forgotPassword a {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000;
+    margin-left: auto;
+    margin-right: 0px;
+  }
+  
+  .register {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .register span {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 14px;
+    color: #808080;
+  }
+  
+  .logo-section {
+    margin-top: 10vh;
+  }
+  
+  .mid-section {
+    margin-top: 20px;
+  }
+  
+  .register a {
+    margin-left: 5px;
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 14px;
+    
+  }
+  
+  
+  footer {
+    position: absolute;
+    bottom: 2vh;
+    left: 30px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #808080;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+  
+  
+  
+  .disableClass {
+    pointer-events: none !important;
+    opacity: 0.5 !important;
+  }
