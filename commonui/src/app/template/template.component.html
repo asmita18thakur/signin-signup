@@ -19,26 +19,21 @@
                   
                 </div>
                 <!-- login -->
-                <div *ngIf="!IsLogin">
-                    <app-login/>
+                <!-- <div *ngIf="IsLogin==='home' ">
+                    <app-login [IsLogin]="IsLogin" (childEvent)="handleChildData($event)"/>
                 </div>
-                <div *ngIf="IsLogin!=null">
-
-                </div>
-                
+                <div *ngIf="IsLogin!=='home'">
+                    <app-signup [IsLogin]="IsLogin" (childEvent)="handleChildData($event)"/>
+                </div> -->
+                <router-outlet></router-outlet>
                 <!-- Footer Text -->
                 <footer class="footerText">
                   <p>@2010 - 2023 Gaian Technologies</p>
                 </footer>
               </div>
-              <!-- Login Panel Stop -->
-              <!-- Login Video Start -->
+           
               <div class="loginVideo">
-                <!-- Image/Video Start -->
-                <!-- <img src="/assets/images/loginVideo.png" /> -->
-                <!--  Image/Video Stop-->
               </div>
-              <!--  Login Video End -->
             </div>
           </div>
         </div>

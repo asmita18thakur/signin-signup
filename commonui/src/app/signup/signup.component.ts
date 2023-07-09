@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component,EventEmitter,Input,Output } from '@angular/core';
+import { LoginServiceService } from '../service/login-service.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PublisherService } from '../publisher/publisher.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -7,6 +11,7 @@ import { Component } from '@angular/core';
 })
 
 export class SignupComponent {
+ 
   email: string = '';
   password: string = ''
   show: boolean = false;
@@ -20,11 +25,14 @@ export class SignupComponent {
     private service: LoginServiceService,
     // private emailControl: FormControl  
     private router: Router,
+    private route:ActivatedRoute,
+    private publish:PublisherService
   ) {
     // this.form = new FormControl('', [Validators.required, Validators.email]);
     this.loader = { show: false };
   }
 
+  
   showPass(boolean: boolean) {
     this.show = boolean
   }
@@ -43,9 +51,16 @@ export class SignupComponent {
   }
 
 
-
-
-
-
+  emailValidation(){
+    if(this.isValid!='wrong' && this.email!=''){
+      this.publish.setEmail(this.email)
+      let payload = {
+        "email": this.email}
+      this.service.emailValidation(payload).subscribe((data:any)=>{
+        console.log(data)
+        this.router.navigate(['/otpvarification'])
+      })
+    }
+  }
 
 }

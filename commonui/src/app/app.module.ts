@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TemplateComponent } from './template/template.component';
 import { SignupComponent } from './signup/signup.component';
+import { OtpVarificationComponent } from './otp-varification/otp-varification.component';
+import { SetPasswordComponent } from './set-password/set-password.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { SignupComponent } from './signup/signup.component';
     LoginComponent,
     TemplateComponent,
     SignupComponent,
+    OtpVarificationComponent,
+    SetPasswordComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { LoginServiceService } from '../login-service/login-service.service';
+import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
+import { LoginServiceService } from '../service/login-service.service';
 import { Validators, FormControl } from '@angular/forms';
 import { AES } from 'crypto-js';
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ToastService } from '../toast-service/toast.service';
 import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from 'src/environment/environment';
@@ -13,6 +13,7 @@ import { environment } from 'src/environment/environment';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+ 
   email: string = '';
   password: string = ''
   show: boolean = false;
@@ -26,10 +27,33 @@ export class LoginComponent {
     private service: LoginServiceService,
     // private emailControl: FormControl  
     private router: Router,
+    private route:ActivatedRoute
   ) {
     // this.form = new FormControl('', [Validators.required, Validators.email]);
     this.loader = { show: false };
+
   }
+
+ 
+
+  showPass(boolean: boolean) {
+    this.show = boolean
+  }
+
+
+  isValidEmail(eamil: string) {
+    const containsAtSymbol = this.email.includes('@');
+    const containsDotCom = this.email.includes('.com');
+    if (containsAtSymbol && containsDotCom) {
+      // Email is correct
+      this.isValid = 'right';
+    } else {
+      // Email is incorrect
+      this.isValid = 'wrong';
+    }
+  }
+
+
 
 
 
@@ -57,7 +81,6 @@ export class LoginComponent {
 
   }
 
-  
 
   login() {
 
@@ -85,6 +108,7 @@ export class LoginComponent {
       '&password=' + this.password +
       '&grant_type=password&checkB2B=true&clientId=gaian&provider=other&productId=604789eb42b7dc00017a8341';
     this.loader.show = true;
+    
     this.service.login(params)
       .subscribe((data: any) => {
         console.log(data)
@@ -97,6 +121,7 @@ export class LoginComponent {
         console.log(localStorage.getItem('tenantId'))
         console.log(localStorage.getItem('token'))
         console.log(localStorage.getItem('exp'))
+        
       }, err => {
         // this.toastService.showErrorToast('Error', 'Error while login');
         this.loader.show = false;

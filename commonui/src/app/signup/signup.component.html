@@ -1,6 +1,9 @@
-<div class="mid-section">
+<section>
+    <div class="loginForm">
+      <h2 class="welcome-txt">Create An Account</h2>
+    </div>
+    <div class="mid-section">
     <div class="mb-2">
-  
       <label for="email" class="form-label  ms-0"
         style="font-family: roboto; font-style: normal; font-size: 14px; font-weight: 400;">Email address</label>
   
@@ -17,16 +20,15 @@
       <input type="radio" [(ngModel)]="rememberMe"  name="" id="">
       
       <span> Remember me </span>
-      <a routerLink="/forgotpassword" class="router_link_a">Forgot password</a>
+      <!-- <a routerLink="/" class="router_link_a">Forgot password</a> -->
   
     </div>
     <div class="mb-3">
-      <!-- [ngClass]="{'disableClass': isSubmit}" type="button" (click)="setTenantId()" -->
       <input  data-dismiss="modal" class="btn btn-primary"
-        id="exampleFormControlInput1" value="Login" (click)="login()">
+        id="exampleFormControlInput1" value="Login" (click)="emailValidation()" >
     </div>
-    <!-- forgot Password -->
     <div class="register">
-      <span>Don't have an account? </span><a routerLink="/forgotpassword" class="router_link_a">Sign Up</a>
+      <span>already have an account? </span><a routerLink="/login" class="router_link_a">Login</a>
     </div>
   </div>
+</section>

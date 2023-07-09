@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-template',
@@ -6,9 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./template.component.scss']
 })
 export class TemplateComponent {
-  IsLogin=localStorage.getItem('tenantId');
-  constructor(){
+  IsLogin:string='';
+  constructor(
+    private route: ActivatedRoute
 
+  ){
+    let obj:any = this.route;
+    let arr = obj['_routerState']['snapshot'].url.split('/;')
+    let pagename=arr[0].split('/')[1]
+    console.log(pagename);
+    this.IsLogin=pagename
+  }
+
+  ngOnInit(){
+    
   }
   
+  handleChildData(data: any) {
+    console.log(data)
+    this.IsLogin = data;
+  }
 }

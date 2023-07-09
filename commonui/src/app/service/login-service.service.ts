@@ -9,8 +9,14 @@ import { environment } from 'src/environment/environment';
 export class LoginServiceService {
   headersOptions: any;
   IAMHeadersOptions: any;
+
+
   constructor(private http: HttpClient) {
-    this.headersOptions = new HttpHeaders();
+    this.headersOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
   }
 
   login(data: any) {
@@ -23,4 +29,21 @@ export class LoginServiceService {
     const url = `${environment.IAMLogin}`;
     return this.http.post(url, data,httpOptions);
   }
+
+  emailValidation(data:any){
+    const url=`${environment.IAMSignUp}`
+    return this.http.post(url, data,this.headersOptions);
+  }
+
+  otpVarification(data:any){
+   const url=`${environment.OTPVarification}`
+   return this.http.post(url ,data,this.headersOptions)
+  }
+  
+
+  setPassword(data:any){
+    // const url=`${environment.}`
+    // return this.http.post(url ,data,this.headersOptions)
+  }
+
 }
